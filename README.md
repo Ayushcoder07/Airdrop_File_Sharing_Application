@@ -1,4 +1,4 @@
-[中文](./README-zh.md)
+
 
 ## Summary
 
@@ -8,11 +8,6 @@ Create connections ways:
 - Wi-Fi P2P/Direct (Recommend， Super Fast) (No LocalNetwork Limit)
 - Scan QR Code (LocalNetwork Limit)
 - UDP Broadcast (LocalNetwork Limit)
-
-[![](screenshots/google-play.png)](https://play.google.com/store/apps/details?id=com.tans.tfiletransporter)
-
-Desktop Version:  
-[tFileTransfer Desktop](https://github.com/Tans5/tFileTransfer_desktop)
 
 ## Screenshots
 
