@@ -72,7 +72,7 @@ object Settings : CoroutineState<Settings.SettingsData> by CoroutineState(Settin
     fun updateDownloadDir(dir: String): Boolean  {
         return if (isDirWriteable(dir)) {
             updateState { s ->
-                if (dir == s.downloadDir) {
+                if (dir != s.downloadDir) {
                     sp.get()?.edit()?.let {
                         it.putString(DOWNLOAD_DIR_KEY, dir)
                         it.apply()
