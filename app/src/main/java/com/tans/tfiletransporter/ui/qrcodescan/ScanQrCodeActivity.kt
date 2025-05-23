@@ -134,7 +134,7 @@ class ScanQrCodeActivity : BaseCoroutineStateActivity<Unit>(defaultState = Unit)
                 }
 
             } else {
-                AndroidLog.e(TAG, "Permission not grant.")
+                AndroidLog.e(TAG, "Request for permission was rejected..")
                 finish()
             }
         }
