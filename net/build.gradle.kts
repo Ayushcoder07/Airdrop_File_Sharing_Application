@@ -1,5 +1,5 @@
 plugins {
-    id("com.google.devtools.ksp")
+    id("com..devtools.ksp")
     alias(libs.plugins.jetbrainsKotlinJvm)
 }
 
