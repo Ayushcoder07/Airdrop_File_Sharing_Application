@@ -91,14 +91,6 @@ class ScanQrCodeActivity : BaseCoroutineStateActivity<Unit>(defaultState = Unit)
         }
     }
 
-    private fun vibrate() {
-        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            getSystemService<VibratorManager>()?.defaultVibrator
-        } else {
-            getSystemService<Vibrator>()
-        }
-        vibrator?.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE))
-    }
 
     private fun finishWithNoAnimation() {
         finish()
