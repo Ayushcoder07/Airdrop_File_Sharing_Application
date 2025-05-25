@@ -119,9 +119,7 @@ class ScanQrCodeActivity : BaseCoroutineStateActivity<Unit>(defaultState = Unit)
                             .addOnFailureListener {
                                 AndroidLog.e(TAG, "Find qrcode error: ${it.message}")
                             }
-                            .addOnCompleteListener {
-                                imageProxy.close()
-                            }
+                          
                     } else {
                         imageProxy.close()
                     }
