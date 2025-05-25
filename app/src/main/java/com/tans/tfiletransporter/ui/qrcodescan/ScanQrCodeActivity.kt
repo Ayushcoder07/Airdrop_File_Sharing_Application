@@ -1,3 +1,4 @@
+
 class ScanQrCodeActivity : BaseCoroutineStateActivity<Unit>(defaultState = Unit) {
 
     override val layoutId = R.layout.scan_qrcode_activity
@@ -91,21 +92,18 @@ class ScanQrCodeActivity : BaseCoroutineStateActivity<Unit>(defaultState = Unit)
         }
     }
 
+    private fun vibrate() {
+        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            getSystemService<VibratorManager>()?.defaultVibrator
+        } else {
+            getSystemService<Vibrator>()
+        }
+        vibrator?.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE))
+    }
 
     private fun finishWithNoAnimation() {
         finish()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
             overrideActivityTransition(Activity.OVERRIDE_TRANSITION_CLOSE, 0, 0, 0)
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            overridePendingTransition(0, 0, 0)
-        } else {
-            overridePendingTransition(0, 0)
-        }
-    }
-
-    companion object {
-        private const val TAG = "ScanQrCodeActivity"
-        private const val QR_CODE_RESULT_KEY = "QR_CODE_RESULT_KEY"
-        fun getResult(data: Intent): List<String> = data.getStringArrayExtra(QR_CODE_RESULT_KEY)?.toList() ?: emptyList()
-    }
-}
+            overridePendingT
