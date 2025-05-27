@@ -47,11 +47,7 @@ class ConnectionActivity : BaseCoroutineStateActivity<ConnectionActivity.Compani
         checkIntentAction(intent)
     }
 
-    override fun CoroutineScope.firstLaunchInitDataCoroutine() {
-        onBackPressedDispatcher.addCallback {
-            finish()
-        }
-    }
+   
 
     override fun CoroutineScope.bindContentViewCoroutine(contentView: View) {
         val viewBinding = ConnectionActivityBinding.bind(contentView)
