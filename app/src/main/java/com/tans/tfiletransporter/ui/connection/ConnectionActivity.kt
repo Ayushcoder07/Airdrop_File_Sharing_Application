@@ -47,7 +47,9 @@ class ConnectionActivity : BaseCoroutineStateActivity<ConnectionActivity.Compani
         checkIntentAction(intent)
     }
 
-   
+    private val sender: AtomicReference<FileSender?> by lazy {
+        AtomicReference(null)
+    }
 
     override fun CoroutineScope.bindContentViewCoroutine(contentView: View) {
         val viewBinding = ConnectionActivityBinding.bind(contentView)
