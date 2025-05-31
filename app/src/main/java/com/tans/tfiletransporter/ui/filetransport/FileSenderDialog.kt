@@ -33,8 +33,7 @@ class FileSenderDialog : BaseCoroutineStateForceResultDialogFragment<FileTransfe
 
     private val bindAddress: InetAddress?
     private val files: List<SenderFile>?
-
-    private val sender: AtomicReference<FileSender?> by lazy {
+ private val sender: AtomicReference<FileSender?> by lazy {
         AtomicReference(null)
     }
 

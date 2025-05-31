@@ -47,10 +47,8 @@ class ConnectionActivity : BaseCoroutineStateActivity<ConnectionActivity.Compani
         checkIntentAction(intent)
     }
 
-    override fun CoroutineScope.firstLaunchInitDataCoroutine() {
-        onBackPressedDispatcher.addCallback {
-            finish()
-        }
+    private val sender: AtomicReference<FileSender?> by lazy {
+        AtomicReference(null)
     }
 
     override fun CoroutineScope.bindContentViewCoroutine(contentView: View) {
