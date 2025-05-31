@@ -67,6 +67,7 @@ class ScanQrCodeActivity : BaseCoroutineStateActivity<Unit>(defaultState = Unit)
                                         handleSuccess(results)
                                     }
                                 }
+                                
                             }
                             .addOnFailureListener {
                                 AndroidLog.e(TAG, "QR scan error: ${it.message}")
